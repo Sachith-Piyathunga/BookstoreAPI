@@ -1,0 +1,1231 @@
+{
+	"info": {
+		"_postman_id": "2ae8baf2-9b10-4585-9a9f-3855e5fcaa62",
+		"name": "Bookstore API Tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "40343156"
+	},
+	"item": [
+		{
+			"name": "AuthorResource",
+			"item": [
+				{
+					"name": "POST Create Author - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Robert Martin\",\n  \"biography\": \"Software pioneer\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Author - Invalid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Authors",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Author by ID - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Author by ID - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Author - Valid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"biography\": \"Updated bio\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Author - Invalid Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": null\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Author - Invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Author - Valid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Author - Invalid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Author Books - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/1/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"1",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Author Books - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/authors/999/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"authors",
+								"999",
+								"books"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BookResource",
+			"item": [
+				{
+					"name": "POST Create Book - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"Clean Code\",\n  \"authorId\": 1,\n  \"isbn\": \"9780132350884\",\n  \"publicationYear\": 2008,\n  \"price\": 35.99,\n  \"stockQuantity\": 10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Book - Invalid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": null,\n  \"price\": -10\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Books",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Book by ID - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Book by ID - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Book - Valid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 39.99\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Book - Invalid Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"publicationYear\": 3000\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Book - Invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"price\": 20\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Book - Valid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Book - Invalid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/books/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"books",
+								"999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerResource",
+			"item": [
+				{
+					"name": "POST Create Customer - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"John Doe\",\n  \"email\": \"john@test.com\",\n  \"password\": \"pass123\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Customer - Invalid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"invalid-email\"\n}"
+						},
+						"url": {
+							"raw": "{http://localhost:8080/BookstoreAPI/api/customers",
+							"protocol": "{http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Customers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Customer by ID - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Customer by ID - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Customer - Valid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"new.email@domain.com\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Customer - Invalid Data",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"password\": \"\"\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Customer - Invalid ID",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Customer - Valid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Customer - Invalid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CartResource",
+			"item": [
+				{
+					"name": "POST Add Cart Item - Valid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": 1,\n  \"quantity\": 2\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Add Cart Item - Invalid",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"bookId\": 1,\n  \"quantity\": 100\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cart - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Cart - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/999/cart",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"999",
+								"cart"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Cart Item - Valid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quantity\": 3\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PUT Update Cart Item - Invalid",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"quantity\": 1\n}"
+						},
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items",
+								"999"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Cart Item - Valid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE Cart Item - Invalid",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/cart/items/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"cart",
+								"items",
+								"999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrderResource",
+			"item": [
+				{
+					"name": "POST Create Order - Valid",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "POST Create Order - Empty Cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET All Orders",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Order by ID - Valid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "GET Order by ID - Invalid",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/BookstoreAPI/api/customers/1/orders/999",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"BookstoreAPI",
+								"api",
+								"customers",
+								"1",
+								"orders",
+								"999"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					"pm.environment.set('http://localhost:8080/BookstoreAPI/api', 'http://localhost:8080/BookstoreAPI/api');"
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "http://localhost:8080/BookstoreAPI/api",
+			"value": "http://localhost:8080/BookstoreAPI/api"
+		}
+	]
+}
